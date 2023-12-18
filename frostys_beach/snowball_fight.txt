@@ -1,0 +1,16 @@
+nougat hints there's some client side things that might affect the game, such as doing no damage
+it's more fun with others but there's likely a way to play alone by doing those modifications
+
+goal: team up with another player and beat santa
+
+https://hhc23-snowball.holidayhackchallenge.com/room/?username=bbour53&roomId=1f777f05f&roomType=public&gameType=co-op&id=2e8d71bc-8a38-4eec-b38f-9813772c0902&dna=ATATATTAATATATATATATATCGATATATATGCGCGCGCATATATATATATATCGATATATATATATGCTAATATATGCATATATATATATTACGATATATATATATTACGATATATAT&singlePlayer=false
+
+
+https://hhc23-snowball.holidayhackchallenge.com/room/?username=bbour53&roomId=1f777f05f&roomType=public&gameType=co-op&id=2e8d71bc-8a38-4eec-b38f-9813772c0902&dna=ATATATTAATATATATATATATCGATATATATGCGCGCGCATATATATATATATCGATATATATATATGCTAATATATGCATATATATATATTACGATATATATATATTACGATATATAT&singlePlayer=true
+
+
+single player elf helps
+
+set santaThrowDelay and elfThrowDelay to high values
+can set snowballDmg to 0
+

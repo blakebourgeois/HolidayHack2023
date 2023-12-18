@@ -1,0 +1,63 @@
+-w 1 -u 1 --kernel-accel 1 --kernel-loops 1
+
+https://hashcat.net/wiki/doku.php?id=example_hashes
+https://hashcat.net/wiki/doku.php?id=hashcat
+
+Run /bin/runtoanswer, without a flaw.  
+Submit the password for Alabaster Snowball,  
+
+Determine the hash type in hash.txt and perform a wordlist cracking attempt to find 
+which password is correct and submit it to /bin/runtoanswer .*
+
+elf@d07df62266b3:~$ cat hash.txt 
+$krb5asrep$23$alabaster_snowball@XMAS.LOCAL:22865a2bceeaa73227ea4021879eda02$8f07417379e610e2dcb0621462fec3675bb5a850aba31837d541e50c622dc5faee60e48e019256e466d29b4d8c43cbf5bf7264b12c21737499cfcb73d95a903005a6ab6d9689ddd2772b908fc0d0aef43bb34db66af1dddb55b64937d3c7d7e93a91a7f303fef96e17d7f5479bae25c0183e74822ac652e92a56d0251bb5d975c2f2b63f4458526824f2c3dc1f1fcbacb2f6e52022ba6e6b401660b43b5070409cac0cc6223a2bf1b4b415574d7132f2607e12075f7cd2f8674c33e40d8ed55628f1c3eb08dbb8845b0f3bae708784c805b9a3f4b78ddf6830ad0e9eafb07980d7f2e270d8dd1966elf@d07df62266b3:~$ 
+
+bing ai:
+
+i am participating in a security challenge. i have been given a hash as a part of the game. the hash begins with $krb5asrep. how would i use hashcat with a wordlist to crack it?
+
+hashcat -m 18200 hash.txt password_list.txt -w 1 -u 1 --kernel-accel 1 --kernel-loops 1
+
+Dictionary cache built:
+* Filename..: password_list.txt
+* Passwords.: 144
+* Bytes.....: 2776
+* Keyspace..: 144
+* Runtime...: 0 secs
+
+The wordlist or mask that you are using is too small.
+This means that hashcat cannot use the full parallel power of your device(s).
+Unless you supply more work, your cracking speed will drop.
+For tips on supplying more work, see: https://hashcat.net/faq/morework
+
+Approaching final keyspace - workload adjusted.  
+
+$krb5asrep$23$alabaster_snowball@XMAS.LOCAL:22865a2bceeaa73227ea4021879eda02$8f07417379e610e2dcb0621462fec3675bb5a850aba31837d541e50c622dc5faee60e48e019256e466d29b4d8c43cbf5bf7264b12c21737499cfcb73d95a903005a6ab6d9689ddd2772b908fc0d0aef43bb34db66af1dddb55b64937d3c7d7e93a91a7f303fef96e17d7f5479bae25c0183e74822ac652e92a56d0251bb5d975c2f2b63f4458526824f2c3dc1f1fcbacb2f6e52022ba6e6b401660b43b5070409cac0cc6223a2bf1b4b415574d7132f2607e12075f7cd2f8674c33e40d8ed55628f1c3eb08dbb8845b0f3bae708784c805b9a3f4b78ddf6830ad0e9eafb07980d7f2e270d8dd1966:IluvC4ndyC4nes!
+                                                 
+Session..........: hashcat
+Status...........: Cracked
+Hash.Type........: Kerberos 5 AS-REP etype 23
+Hash.Target......: $krb5asrep$23$alabaster_snowball@XMAS.LOCAL:22865a2...dd1966
+Time.Started.....: Sun Dec 10 22:45:42 2023 (0 secs)
+Time.Estimated...: Sun Dec 10 22:45:42 2023 (0 secs)
+Guess.Base.......: File (password_list.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.#1.........:      835 H/s (1.09ms) @ Accel:1 Loops:1 Thr:64 Vec:16
+Recovered........: 1/1 (100.00%) Digests, 1/1 (100.00%) Salts
+Progress.........: 144/144 (100.00%)
+Rejected.........: 0/144 (0.00%)
+Restore.Point....: 0/144 (0.00%)
+Restore.Sub.#1...: Salt:0 Amplifier:0-1 Iteration:0-0
+Candidates.#1....: 1LuvCandyC4n3s!2022 -> iLuvC4ndyC4n3s!23!
+
+Started: Sun Dec 10 22:45:23 2023
+Stopped: Sun Dec 10 22:45:44 2023
+
+elf@d07df62266b3:~$ /bin/runtoanswer
+What is the password for the hash in /home/elf/hash.txt ?
+
+> IluvC4ndyC4nes!
+Your answer: IluvC4ndyC4nes!
+
+Checking....
+Your answer is correct!

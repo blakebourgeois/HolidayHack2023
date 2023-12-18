@@ -1,0 +1,3 @@
+as per the Tenable article and the game name hint, inserting NaN is accepted as valid input. 
+it will win as a max card
+using the combo 0, 1, 2, NaN, 4 wins every hand

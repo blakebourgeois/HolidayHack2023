@@ -1,0 +1,44 @@
+opening game multiple times reveals urls for game0.gb and game1.gb
+
+diff in hxd:
+
+0x14F
+game0: B3
+game1: 86
+
+0x593
+game0: 0B 4B 9A 23
+game1: D2 AC 3D 2D
+
+ # no apparent change
+
+0x16A84
+game0: B3
+game1: 0B
+
+0x16AB8
+game0: 09
+game1: 06
+
+0x17C80
+game0: 02
+game1: 01
+
+0x184FE
+game0: 02 80
+game1: 03 00
+
+0x18513
+game0: 0B 80
+game1: 04 00
+
+ # the direction changed of the starting screen
+ # a portal appeared
+ # chatntp loves "old timey radio"
+ # the radio may not do anything?
+
+clicking radio beeps in morse
+--. .-.. ----- .-. -.--
+"GL0RY"
+
+GL0RY works as the submission for the challenge

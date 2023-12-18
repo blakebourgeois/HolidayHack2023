@@ -1,0 +1,12 @@
+eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzcGVlZCI6LTUwMH0.
+
+
+eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzcGVlZCI6LTUwLCJ3Ijp0cnVlfQ==.
+
+
+{
+  "speed": -50,
+  "w": true
+}
+
+ROLE:GeeseIslandsSuperChiefCommunicationsOfficer

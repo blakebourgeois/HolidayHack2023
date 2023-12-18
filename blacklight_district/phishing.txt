@@ -1,0 +1,12 @@
+spf
+v=spf1 a:mail.geeseislands.com -all
+
+dkim
+v=DKIM1;t=s;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDjtqsLqwecFGF7AmP+Siln86O1v9NOKJw4ZsEHDV5fo0Vjj0qNPyyARKSkDmnIKjnzLGUUQO31Fr+vdZU61IaI9/ZD39WJKaAeX96uQ65mRQqqPVYxPLN5OvuFRmIHJ/TgOkD6z5/7VM7Zs1kw5Qnl04FmOLwWd00D+uNZnj8TCwIDAQAB
+
+dmarc
+v=DMARC1; p=reject; pct=100; rua=mailto:dmarc-reports@geeseislands.com
+
+steven.gray - "phishing"
+rachel.brown - "phishing"
+quincy.adams - "phishing"

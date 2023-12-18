@@ -1,0 +1,80 @@
+type yes to begin
+
+1. perform a directory listing: ls
+elf@b484aca5b91f:~$ ls
+HELP  troll_19315479765589239  workshop
+
+2. find the troll within inside the troll
+elf@b484aca5b91f:~$ cat troll_19315479765589239 
+troll_24187022596776786
+
+3. remove the troll
+elf@b484aca5b91f:~$ rm troll_19315479765589239
+
+4. find the present working directory
+elf@b484aca5b91f:~$ pwd
+
+5. find the hidden troll
+elf@b484aca5b91f:~$ ls -a
+
+6. find the troll in your command history
+elf@b484aca5b91f:~$ history
+
+7. find the troll in your environment variables
+elf@b484aca5b91f:~$ env
+
+8. head into the workshop
+elf@b484aca5b91f:~$ cd workshop
+
+9. a troll is hiding in one of the toolboxes. use grep to find which toolbox the troll is in
+elf@b484aca5b91f:~/workshop$ grep -ri troll
+toolbox_191.txt:tRoLl.4056180441832623
+
+10. a troll is blocking the present_engine from starting. run the present_engine to retrieve the troll
+elf@b484aca5b91f:~/workshop$ ./present_engine 
+troll.898906189498077
+
+11. Trolls have blown the fuses in /home/elf/workshop/electrical. cd into electrical and rename blown_fuse0 to fuse0
+elf@b484aca5b91f:~/workshop$ cd electrical/
+elf@b484aca5b91f:~/workshop/electrical$ mv blown_fuse0 fuse0
+
+12. make a symbolic link named fuse1 that points to fuse0
+elf@b484aca5b91f:~/workshop/electrical$ ln -s fuse0 fuse1
+
+13. make a copy of fuse1 named fuse2
+elf@b484aca5b91f:~/workshop/electrical$ cp fuse1 fuse2
+
+14. add the characters TROLL_REPELLENT into file fuse2
+elf@b484aca5b91f:~/workshop/electrical$ echo "TROLL_REPELLENT" > fuse2
+
+15. find the troll in /opt/troll_den
+cd /opt/troll_den
+find
+
+16. find the file created by trolls that is greater than 108 kilo and less than 110 kilo somewhere in /opt/troll_den
+elf@b484aca5b91f:/opt/troll_den$ find -size +108k -size -110k
+./plugins/portlet-mocks/src/test/java/org/apache/t_r_o_l_l_2579728047101724
+
+17. list the proceeses
+elf@b484aca5b91f:/opt/troll_den$ ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+init           1  0.0  0.0  20112 16488 pts/0    Ss+  19:58   0:00 /usr/bin/python3 /usr/local/bin/tmuxp load ./mysession.yaml
+elf        12903  0.5  0.0  31580 26952 pts/2    S+   20:19   0:00 /usr/bin/python3 /14516_troll
+elf        13225  0.0  0.0   7672  3240 pts/3    R+   20:20   0:00 ps aux
+
+18. the 14516_troll process is listening on a tcp port. use a command to have the only listening port display to the screen
+elf@b484aca5b91f:/opt/troll_den$ netstat -l
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:54321           0.0.0.0:*               LISTEN     
+Active UNIX domain sockets (only servers)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  2      [ ACC ]     STREAM     LISTENING     70405710 /tmp/tmux-1050/default
+
+19. the service on port 54321 is an http server. interact with the server to retrieve the troll
+elf@b484aca5b91f:/opt/troll_den$ curl 127.0.0.1:54321
+troll.73180338045875
+
+20. stop the 14516_troll process
+elf@b484aca5b91f:/opt/troll_den$ kill 12903
+

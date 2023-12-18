@@ -1,0 +1,48 @@
+fix the pen test report
+
+finding 1: ad/cs
+everything appears accurate
+"REAL"
+
+finding 2: sql injection in java
+concerned about mentioning "brute forcing" at the end as out of context
+"REAL"
+
+finding 3: rce via java deserializaiton
+appears reasonable
+"FALSE"
+
+finding 4: azure function application-ssh conf key signing vuln
+the Azure Key Vault service can't be used for signing opertations (bing ai)
+"REAL"
+
+finding 5: key vault
+key vault reader assignment would not give the correct permissions to view secrets, just metadata
+"REAL"
+
+finding 6: stored css vuln
+feels off...i don't think the sample would be relevant/concerned about context
+"FALSE"
+
+finding 7: browsable directory structure
+i don't like the syntax for the code
+"REAL"
+
+
+finding 8: depreciated php
+reasonable...
+"REAL"
+
+finding 9: internal ip address disclosre
+this one is pretty egregious
+"FALSE"
+
+wompwomp
+it appears i have to use ai to ai this ai :(
+
+
+w/e
+brute force: 
+0 0 1 0 0 1 0 0 1
+
+this one made me feel icky.
