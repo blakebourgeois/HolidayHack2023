@@ -1,0 +1,24 @@
+GET https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/providers/Microsoft.Web/sites/{name}/sourcecontrols/web?api-version=2022-03-01
+
+https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/providers/Microsoft.Web/sites?api-version=2022-03-01
+
+GET https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64}/providers/Microsoft.Web/sites?api-version=2022-03-01
+
+
+GET https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/resources?api-version=2022-03-01
+
+{"value":[{
+"id":"/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/providers/Microsoft.KeyVault/vaults/northpole-ssh-certs-kv",
+"name":"northpole-ssh-certs-kv","type":"Microsoft.KeyVault/vaults","location":"eastus","tags":{}},{
+"id":"/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/providers/Microsoft.KeyVault/vaults/northpole-it-kv",
+"name":"northpole-it-kv","type":"Microsoft.KeyVault/vaults","location":"eastus","tags":{}}]}
+
+GET https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/providers/Microsoft.Web/sites?api-version=2022-03-01
+
+
+
+northpole-ssh-certs-fa
+
+GET https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/providers/Microsoft.Web/sites/northpole-ssh-certs-fa/sourcecontrols/web?api-version=2022-03-01
+
+

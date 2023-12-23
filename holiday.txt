@@ -1,0 +1,19 @@
+
+1. snag - 10 + 5 (15)
+2. counter until it stops -
+3. repeat step one until snag
+4. reset
+5. first number, second number, start rotating back and testing numbers 
+
+ones - C0F8
+tens - c12c
+hundres - c160
+
+ones - *cba2*, d832
+tens - *cb9c*, d7b2
+hundres - *cb9e*, d7a6
+
+search a digit
+collect a coin
+sub search new value
+there may be 4 sets of values that need to align? or are separate for display/backend

